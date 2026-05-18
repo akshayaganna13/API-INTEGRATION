@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Weather App</title>
+
+<style>
+
+body{
+    font-family:Arial;
+    background:linear-gradient(to right,#4facfe,#00f2fe);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    text-align:center;
+    width:350px;
+}
+
+input{
+    padding:10px;
+    width:70%;
+}
+
+button{
+    padding:10px;
+    background:black;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+.weather{
+    margin-top:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Weather App</h1>
+
+<input type="text" id="city" placeholder="Enter city">
+
+<button onclick="getWeather()">Search</button>
+
+<div class="weather" id="result"></div>
+
+</div>
+
+<script>
+
+async function getWeather(){
+
+const city =
+document.getElementById("city").value;
+
+const apiKey = "6986cca22c41011d4b5b2ccdccd00e54";
+
+const url =
+`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+const response = await fetch(url);
+
+const data = await response.json();
+
+document.getElementById("result").innerHTML = `
+<h2>${data.name}</h2>
+<p>Temperature: ${data.main.temp} °C</p>
+<p>Weather: ${data.weather[0].main}</p>
+<p>Humidity: ${data.main.humidity}%</p>
+<p>Wind Speed: ${data.wind.speed} m/s</p>
+`;
+
+}
+
+</script>
+
+</body>
+</html>
