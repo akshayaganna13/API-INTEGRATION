@@ -20,4 +20,5 @@ The project mainly focuses on API integration, asynchronous programming, and dyn
 
 The Weather Web Application is beneficial for users who want quick and accurate weather updates. It is a practical example of combining frontend technologies with public APIs to build interactive and user-friendly applications. Overall, this project improves knowledge of web technologies, API handling, and responsive webpage design while providing a functional weather information system.
 
-
+**OUTPUT**
+<img width="1899" height="913" alt="Image" src="https://github.com/user-attachments/assets/13a3632a-352d-4caf-be57-4f4354fb3be6" />
